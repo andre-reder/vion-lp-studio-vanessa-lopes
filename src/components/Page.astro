@@ -1,0 +1,131 @@
+---
+import SmoothScroll from "./SmoothScroll.tsx";
+import ScrollProgress from "./ScrollProgress.tsx";
+import Cursor from "./Cursor.tsx";
+import ConceptBanner from "./ConceptBanner.tsx";
+import Navbar from "./Navbar.tsx";
+import Hero from "./Hero.tsx";
+import Manifesto from "./Manifesto.tsx";
+import Services from "./Services.tsx";
+import Experience from "./Experience.tsx";
+import Process from "./Process.tsx";
+import Gallery from "./Gallery.tsx";
+import Testimonials from "./Testimonials.tsx";
+import FAQ from "./FAQ.tsx";
+import Contact from "./Contact.tsx";
+import Footer from "./Footer.tsx";
+---
+
+<SmoothScroll client:load />
+<ScrollProgress client:load />
+<Cursor client:load />
+<ConceptBanner client:load />
+<Navbar client:load />
+
+<main>
+  <Hero client:load />
+  <Manifesto client:visible />
+  <Services client:visible />
+  <Experience client:visible />
+  <Process client:visible />
+  <Gallery client:visible />
+  <Testimonials client:visible />
+  <FAQ client:visible />
+  <Contact client:visible />
+</main>
+
+<Footer client:visible />
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+  :root {
+    --color-canvas: #faf4f0;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #fdf8f5;
+    --color-text: #2d1b23;
+    --color-text-muted: #6b5560;
+    --color-border: #e8d9d2;
+    --color-accent: #b76e79;
+    --color-accent-light: #d4877a;
+    --color-accent-deep: #8c4a57;
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --banner-h: 38px;
+  }
+
+  
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-canvas);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+
+  .font-serif {
+    font-family: var(--font-display);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(183, 110, 121, 0.25);
+    color: #2d1b23;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #faf4f0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d9c5be;
+    border-radius: 10px;
+    border: 2px solid #faf4f0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b76e79;
+  }
+
+  /* Focus visible */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #b76e79;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Hide default cursor only after custom cursor is initialized */
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active select {
+    cursor: none;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
