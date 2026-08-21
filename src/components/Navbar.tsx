@@ -23,7 +23,7 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-    console.log('OI NAVBAR, teste pra ver como ta saindo o commit')
+    console.log('OI NAVBAR DE NOVO, teste pra ver como ta saindo o commit')
     if (menuOpen) {
       document.body.style.overflow = "hidden";
     } else {
